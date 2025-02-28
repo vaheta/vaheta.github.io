@@ -155,6 +155,20 @@ nav a.active::after {
 .social-links a:hover {
     transform: translateY(-3px);
     color: var(--accent-color);
+    border-bottom: none;
+}
+
+/* Hero links styling */
+.profile-text a:not(.social-links a) {
+    color: #5533cc;  /* More purple color */
+    font-weight: 500;
+    border-bottom: 1px solid #5533cc;
+    transition: all 0.3s;
+}
+
+.profile-text a:not(.social-links a):hover {
+    opacity: 0.8;
+    border-bottom: 1px solid #5533cc;
 }
 
 /* Highlights Section */
@@ -405,4 +419,22 @@ footer {
         margin-right: 0;
         margin-bottom: 1rem;
     }
+}
+
+/* Combined Hero-Header Section */
+.hero-header {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Inline Navigation Links */
+.inline-nav {
+    color: var(--accent-color);
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.inline-nav:hover {
+    border-bottom: 1px solid var(--accent-color);
 }
