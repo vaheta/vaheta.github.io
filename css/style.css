@@ -5,7 +5,7 @@
     --accent-color: #0066cc;
     --text-color: #111;
     --light-text: #555;
-    --bg-color: #fff;
+    --bg-color: #f2f2f2;
     --light-bg: #f2f2f2;
     --border-color: #ddd;
     --code-bg: #f7f7f7;
@@ -167,8 +167,9 @@ nav a.active::after {
 }
 
 .profile-text a:not(.social-links a):hover {
-    opacity: 0.8;
-    border-bottom: 1px solid #5533cc;
+    color: #000000;  /* Black on hover */
+    border-bottom: 1px solid #000000;
+    opacity: 1;  /* Remove the opacity reduction */
 }
 
 /* Highlights Section */
@@ -549,4 +550,19 @@ footer {
         width: 100%;
         text-align: center;
     }
+}
+
+/* Remove border and adjust spacing between sections */
+.no-border {
+    border-bottom: none !important;
+    padding-bottom: 2rem; /* Reduced padding */
+}
+
+.no-top-padding {
+    padding-top: 1rem; /* Reduced top padding */
+}
+
+/* Optional: make the background consistent between sections */
+.highlights {
+    background-color: var(--bg-color); /* Match the body background */
 }
