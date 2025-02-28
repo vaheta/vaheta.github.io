@@ -31,23 +31,104 @@
 
     <section class="highlights">
         <div class="container">
-            <h2>Research Highlights</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Latest Paper</h3>
-                    <p>"[Paper Title]" published in [Conference/Journal]</p>
-                    <a href="papers.html" class="btn">View All Papers</a>
+            <h2>Recent Work</h2>
+            
+            <div class="feed-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="paper">Papers</button>
+                <button class="filter-btn" data-filter="project">Projects</button>
+                <button class="filter-btn" data-filter="blog">Blog Posts</button>
+            </div>
+            
+            <div class="combined-feed">
+                <!-- Paper Item -->
+                <div class="feed-item" data-type="paper">
+                    <div class="feed-thumbnail">
+                        <img src="images/placeholder-paper1.jpg" alt="Paper 1 Thumbnail">
+                    </div>
+                    <div class="feed-info">
+                        <span class="feed-tag">Paper</span>
+                        <h3>"[Paper Title 1]"</h3>
+                        <p class="feed-meta">[Author List] • [Conference/Journal], 2025</p>
+                        <p class="feed-excerpt">[Brief abstract of the paper...]</p>
+                        <div class="feed-links">
+                            <a href="papers.html" class="btn btn-small">View Details</a>
+                            <a href="#" class="btn btn-small">PDF</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Featured Project</h3>
-                    <p>[Project Name]: [Brief description]</p>
-                    <a href="projects.html" class="btn">View All Projects</a>
+                
+                <!-- Project Item -->
+                <div class="feed-item" data-type="project">
+                    <div class="feed-thumbnail">
+                        <img src="images/projects/project1.jpg" alt="Project 1">
+                    </div>
+                    <div class="feed-info">
+                        <span class="feed-tag">Project</span>
+                        <h3>[Project 1 Name]</h3>
+                        <p class="feed-meta">Released: January 2025</p>
+                        <p class="feed-excerpt">[Brief description of the project, its goals, and outcomes...]</p>
+                        <div class="feed-links">
+                            <a href="projects.html" class="btn btn-small">View Details</a>
+                            <a href="#" class="btn btn-small">Demo</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3>Recent Blog Post</h3>
-                    <p>"[Blog Post Title]"</p>
-                    <a href="blog.html" class="btn">Read the Blog</a>
+                
+                <!-- Blog Post Item -->
+                <div class="feed-item" data-type="blog">
+                    <div class="feed-thumbnail">
+                        <img src="images/blog/blog1.jpg" alt="Blog Post 1">
+                    </div>
+                    <div class="feed-info">
+                        <span class="feed-tag">Blog</span>
+                        <h3>"[Blog Post Title 1]"</h3>
+                        <p class="feed-meta">Published: January 15, 2025 • Tags: 3D Vision, SLAM, Robotics</p>
+                        <p class="feed-excerpt">[Brief excerpt or introduction to the blog post...]</p>
+                        <div class="feed-links">
+                            <a href="blog.html" class="btn btn-small">Read More</a>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Paper Item -->
+                <div class="feed-item" data-type="paper">
+                    <div class="feed-thumbnail">
+                        <img src="images/placeholder-paper2.jpg" alt="Paper 2 Thumbnail">
+                    </div>
+                    <div class="feed-info">
+                        <span class="feed-tag">Paper</span>
+                        <h3>"[Paper Title 2]"</h3>
+                        <p class="feed-meta">[Author List] • [Conference/Journal], 2024</p>
+                        <p class="feed-excerpt">[Brief abstract of the paper...]</p>
+                        <div class="feed-links">
+                            <a href="papers.html" class="btn btn-small">View Details</a>
+                            <a href="#" class="btn btn-small">PDF</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blog Post Item -->
+                <div class="feed-item" data-type="blog">
+                    <div class="feed-thumbnail">
+                        <img src="images/blog/blog2.jpg" alt="Blog Post 2">
+                    </div>
+                    <div class="feed-info">
+                        <span class="feed-tag">Blog</span>
+                        <h3>"[Blog Post Title 2]"</h3>
+                        <p class="feed-meta">Published: November 20, 2024 • Tags: Point Clouds, Deep Learning</p>
+                        <p class="feed-excerpt">[Brief excerpt or introduction to the blog post...]</p>
+                        <div class="feed-links">
+                            <a href="blog.html" class="btn btn-small">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-links">
+                <a href="papers.html" class="btn">All Papers</a>
+                <a href="projects.html" class="btn">All Projects</a>
+                <a href="blog.html" class="btn">All Blog Posts</a>
             </div>
         </div>
     </section>

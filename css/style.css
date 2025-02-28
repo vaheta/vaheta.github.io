@@ -438,3 +438,115 @@ footer {
 .inline-nav:hover {
     border-bottom: 1px solid var(--accent-color);
 }
+
+/* Combined Feed Styles */
+.feed-filters {
+    margin-bottom: 2rem;
+}
+
+.combined-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feed-item {
+    display: flex;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.feed-item:last-child {
+    border-bottom: none;
+}
+
+.feed-thumbnail {
+    flex: 0 0 180px;
+    margin-right: 1.5rem;
+}
+
+.feed-thumbnail img {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    object-fit: cover;
+}
+
+.feed-info {
+    flex: 1;
+}
+
+.feed-tag {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.feed-info h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.feed-meta {
+    color: var(--light-text);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.feed-excerpt {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.feed-links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.view-all-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Tag colors */
+.feed-item[data-type="paper"] .feed-tag {
+    background-color: #0066cc;
+}
+
+.feed-item[data-type="project"] .feed-tag {
+    background-color: #339933;
+}
+
+.feed-item[data-type="blog"] .feed-tag {
+    background-color: #993399;
+}
+
+@media (max-width: 768px) {
+    .feed-item {
+        flex-direction: column;
+    }
+    
+    .feed-thumbnail {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .view-all-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .view-all-links .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

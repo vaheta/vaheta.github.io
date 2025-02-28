@@ -25,6 +25,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Combined feed filtering functionality
+    const feedFilterButtons = document.querySelectorAll('.feed-filters .filter-btn');
+    const feedItems = document.querySelectorAll('.feed-item');
+    
+    feedFilterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            feedFilterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get filter value
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Show/hide feed items based on filter
+            feedItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-type') === filterValue) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+    
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
