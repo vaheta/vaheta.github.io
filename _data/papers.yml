@@ -1,14 +1,12 @@
-- title: "Paper Title 1"
-  authors: "Author List including Vahe Taamazyan"
-  venue: "Conference/Journal, 2025"
-  year: 2025
-  abstract: "Brief abstract of the paper..."
-  thumbnail: "/assets/images/papers/paper1.jpg"
+- title: "Plenoptic 3D Vision System"
+  authors: "Agastya Kalra, Vage Taamazyan, Alberto Dall'Olio, Raghav Khanna, Tomas Gerlich, Georgia Giannopoulou, Guy Stoppi, Daniel Baxter, Abhijit Ghosh, Rick Szeliski, Kartik Venkataraman"
+  venue: "SIGGRAPH Asia 2024"
+  year: 2024
+  thumbnail: "/assets/images/papers/mbcres.jpg"
   links:
-    pdf: "#"
-    code: "#"
-    project: "#"
-    bibtex: "#"
+    pdf: "https://dl.acm.org/doi/pdf/10.1145/3680528.3687665"
+    project: "https://akasha-imaging.github.io/plenoptic-vision/"
+    bibtex: "https://scholar.googleusercontent.com/scholar.bib?q=info:QmWr7KBczjkJ:scholar.google.com/&output=citation&scisdr=ClHYt_iBEIb3m3YI3Gc:AFWwaeYAAAAAZ8QOxGfWFHOlUvMxllnu9JBrxlo&scisig=AFWwaeYAAAAAZ8QOxH_NEoEmpQYv7rJfaLJTbCc&scisf=4&ct=citation&cd=-1&hl=en"
 
 - title: "Paper Title 2"
   authors: "Author List including Vahe Taamazyan"
