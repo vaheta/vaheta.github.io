@@ -35,94 +35,97 @@ title: Home
             {% assign all_items = '' | split: '' %}
             
             {% for paper in site.data.papers %}
-                {% assign paper_with_type = paper | merge: {"item_type": "paper"} %}
-                {% assign paper_date = paper.year | append: "-01-01" | date: "%Y-%m-%d" %}
-                {% assign paper_with_date = paper_with_type | merge: {"sort_date": paper_date} %}
-                {% assign all_items = all_items | push: paper_with_date %}
+                {% capture temp_item %}
+                    <div class="feed-item" data-type="paper">
+                        <div class="feed-thumbnail">
+                            <img src="{{ paper.thumbnail | relative_url }}" alt="{{ paper.title }} Thumbnail">
+                        </div>
+                        <div class="feed-info">
+                            <span class="feed-tag">Paper</span>
+                            <h3>"{{ paper.title }}"</h3>
+                            <p class="feed-meta">{{ paper.authors }} • {{ paper.venue }}</p>
+                            <p class="feed-excerpt">{{ paper.abstract }}</p>
+                            <div class="feed-links">
+                                {% if paper.links.pdf %}
+                                <a href="{{ paper.links.pdf }}" class="btn btn-small" target="_blank">PDF</a>
+                                {% endif %}
+                                {% if paper.links.code %}
+                                <a href="{{ paper.links.code }}" class="btn btn-small" target="_blank">Code</a>
+                                {% endif %}
+                                {% if paper.links.project %}
+                                <a href="{{ paper.links.project }}" class="btn btn-small" target="_blank">Project Page</a>
+                                {% endif %}
+                                {% if paper.links.bibtex %}
+                                <a href="{{ paper.links.bibtex }}" class="btn btn-small" target="_blank">BibTeX</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% if paper.year %}{% assign item_year = paper.year %}{% else %}{% assign item_year = 1900 %}{% endif %}
+                    {{ item_year }}
+                {% endcapture %}
+                {% assign all_items = all_items | push: temp_item %}
             {% endfor %}
             
             {% for project in site.data.projects %}
-                {% assign project_with_type = project | merge: {"item_type": "project"} %}
-                {% assign project_date = project.date | date: "%Y-%m-%d" %}
-                {% assign project_with_date = project_with_type | merge: {"sort_date": project_date} %}
-                {% assign all_items = all_items | push: project_with_date %}
+                {% capture temp_item %}
+                    <div class="feed-item" data-type="project">
+                        <div class="feed-thumbnail">
+                            <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+                        </div>
+                        <div class="feed-info">
+                            <span class="feed-tag">Project</span>
+                            <h3>{{ project.title }}</h3>
+                            <p class="feed-meta">Released: {{ project.date }}</p>
+                            <p class="feed-excerpt">{{ project.description }}</p>
+                            <div class="feed-links">
+                                {% if project.links.demo %}
+                                <a href="{{ project.links.demo }}" class="btn btn-small" target="_blank">Demo</a>
+                                {% endif %}
+                                {% if project.links.code %}
+                                <a href="{{ project.links.code }}" class="btn btn-small" target="_blank">Code</a>
+                                {% endif %}
+                                {% if project.links.paper %}
+                                <a href="{{ project.links.paper }}" class="btn btn-small" target="_blank">Paper</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% if project.date %}{% assign date_parts = project.date | split: " " %}{% if date_parts.size > 1 %}{% assign item_year = date_parts.last %}{% else %}{% assign item_year = project.date %}{% endif %}{% else %}{% assign item_year = 1900 %}{% endif %}
+                    {{ item_year }}
+                {% endcapture %}
+                {% assign all_items = all_items | push: temp_item %}
             {% endfor %}
             
             {% for post in site.posts %}
-                {% assign post_with_type = post | merge: {"item_type": "blog"} %}
-                {% assign post_date = post.date | date: "%Y-%m-%d" %}
-                {% assign post_with_date = post_with_type | merge: {"sort_date": post_date} %}
-                {% assign all_items = all_items | push: post_with_date %}
+                {% capture temp_item %}
+                    <div class="feed-item" data-type="blog">
+                        <div class="feed-thumbnail">
+                            <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+                        </div>
+                        <div class="feed-info">
+                            <span class="feed-tag">Blog</span>
+                            <h3>"{{ post.title }}"</h3>
+                            <p class="feed-meta">Published: {{ post.date | date: "%B %d, %Y" }}</p>
+                            <p class="feed-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+                            <div class="feed-links">
+                                <a href="{{ post.url | relative_url }}" class="btn btn-small">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{ post.date | date: "%Y" }}
+                {% endcapture %}
+                {% assign all_items = all_items | push: temp_item %}
             {% endfor %}
             
-            {% assign sorted_items = all_items | sort: "sort_date" | reverse %}
+            {% assign sorted_items = all_items | sort | reverse %}
             
-            {% for item in sorted_items %}
-                {% if item.item_type == "paper" %}
-                <div class="feed-item" data-type="paper">
-                    <div class="feed-thumbnail">
-                        <img src="{{ item.thumbnail | relative_url }}" alt="{{ item.title }} Thumbnail">
-                    </div>
-                    <div class="feed-info">
-                        <span class="feed-tag">Paper</span>
-                        <h3>"{{ item.title }}"</h3>
-                        <p class="feed-meta">{{ item.authors }} • {{ item.venue }} ({{ item.year }})</p>
-                        <p class="feed-excerpt">{{ item.abstract }}</p>
-                        <div class="feed-links">
-                            {% if item.links.pdf %}
-                            <a href="{{ item.links.pdf }}" class="btn btn-small" target="_blank">PDF</a>
-                            {% endif %}
-                            {% if item.links.code %}
-                            <a href="{{ item.links.code }}" class="btn btn-small" target="_blank">Code</a>
-                            {% endif %}
-                            {% if item.links.project %}
-                            <a href="{{ item.links.project }}" class="btn btn-small" target="_blank">Project Page</a>
-                            {% endif %}
-                            {% if item.links.bibtex %}
-                            <a href="{{ item.links.bibtex }}" class="btn btn-small" target="_blank">BibTeX</a>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                {% elsif item.item_type == "project" %}
-                <div class="feed-item" data-type="project">
-                    <div class="feed-thumbnail">
-                        <img src="{{ item.thumbnail | relative_url }}" alt="{{ item.title }}">
-                    </div>
-                    <div class="feed-info">
-                        <span class="feed-tag">Project</span>
-                        <h3>{{ item.title }}</h3>
-                        <p class="feed-meta">Released: {{ item.date }}</p>
-                        <p class="feed-excerpt">{{ item.description }}</p>
-                        <div class="feed-links">
-                            {% if item.links.demo %}
-                            <a href="{{ item.links.demo }}" class="btn btn-small" target="_blank">Demo</a>
-                            {% endif %}
-                            {% if item.links.code %}
-                            <a href="{{ item.links.code }}" class="btn btn-small" target="_blank">Code</a>
-                            {% endif %}
-                            {% if item.links.paper %}
-                            <a href="{{ item.links.paper }}" class="btn btn-small" target="_blank">Paper</a>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                {% elsif item.item_type == "blog" %}
-                <div class="feed-item" data-type="blog">
-                    <div class="feed-thumbnail">
-                        <img src="{{ item.thumbnail | relative_url }}" alt="{{ item.title }}">
-                    </div>
-                    <div class="feed-info">
-                        <span class="feed-tag">Blog</span>
-                        <h3>"{{ item.title }}"</h3>
-                        <p class="feed-meta">Published: {{ item.date | date: "%B %d, %Y" }} • Tags: {{ item.tags | join: ", " }}</p>
-                        <p class="feed-excerpt">{{ item.excerpt | strip_html | truncatewords: 50 }}</p>
-                        <div class="feed-links">
-                            <a href="{{ item.url | relative_url }}" class="btn btn-small">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
+            {% for item_with_year in sorted_items %}
+                {% assign parts = item_with_year | split: "
+                    " %}
+                {% assign item_html = parts | pop | join: "
+                    " %}
+                {{ item_html }}
             {% endfor %}
         </div>
     </div>
