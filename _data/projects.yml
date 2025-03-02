@@ -1,6 +1,7 @@
 - title: "Project 1 Name"
   description: "Brief description of the project, its goals, and outcomes..."
-  date: "January 2025"
+  date: "2025-01-15"
+  display_date: "January 2025"
   thumbnail: "/assets/images/projects/project1.jpg"
   links:
     demo: "#"
@@ -9,7 +10,8 @@
 
 - title: "Project 2 Name"
   description: "Brief description of the project, its goals, and outcomes..."
-  date: "November 2024"
+  date: "2024-11-20"
+  display_date: "November 2024"
   thumbnail: "/assets/images/projects/project2.jpg"
   links:
     demo: "#"

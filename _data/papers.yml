@@ -2,6 +2,7 @@
   authors: "Agastya Kalra, Vage Taamazyan, Alberto Dall'Olio, Raghav Khanna, Tomas Gerlich, Georgia Giannopoulou, Guy Stoppi, Daniel Baxter, Abhijit Ghosh, Rick Szeliski, Kartik Venkataraman"
   venue: "SIGGRAPH Asia 2024"
   year: 2024
+  date: "2024-12-01"
   thumbnail: "/assets/images/papers/mbcres.png"
   links:
     pdf: "https://dl.acm.org/doi/pdf/10.1145/3680528.3687665"
@@ -12,6 +13,7 @@
   authors: "Vage Taamazyan, Alberto Dall'olio, Agastya Kalra"
   venue: "CVPR VLADR 2024"
   year: 2024
+  date: "2024-06-15"
   thumbnail: "/assets/images/papers/collision_metric_viz.png"
   links:
     pdf: "https://arxiv.org/pdf/2405.09755"
@@ -22,6 +24,7 @@
   authors: "Agastya Kalra, Guy Stoppi, Dmitrii Marin, Vage Taamazyan, Aarrushi Shandilya, Rishav Agarwal, Anton Boykov, Tze Hao Chong, Michael Stark"
   venue: "CVPR 2024"
   year: 2024
+  date: "2024-06-12"
   thumbnail: "/assets/images/papers/towards6dof.png"
   links:
     pdf: "https://openaccess.thecvf.com/content/CVPR2024/papers/Kalra_Towards_Co-Evaluation_of_Cameras_HDR_and_Algorithms_for_Industrial-Grade_6DoF_CVPR_2024_paper.pdf"
@@ -32,6 +35,7 @@
   authors: "Agastya Kalra, Vage Taamazyan, Supreeth Krishna Rao, Kartik Venkataraman, Ramesh Raskar, Achuta Kadambi"
   venue: "CVPR 2020"
   year: 2020
+  date: "2020-06-15"
   thumbnail: "/assets/images/papers/deep_polarization_transparent.png"
   links:
     pdf: "https://openaccess.thecvf.com/content_CVPR_2020/papers/Kalra_Deep_Polarization_Cues_for_Transparent_Object_Segmentation_CVPR_2020_paper.pdf"
@@ -41,6 +45,7 @@
   authors: "Achuta Kadambi, Vage Taamazyan, Boxin Shi, Ramesh Raskar"
   venue: "IJCV 2017"
   year: 2017
+  date: "2017-06-15"
   thumbnail: "/assets/images/papers/ijcv2017.png"
   links:
     pdf: "https://dspace.mit.edu/bitstream/handle/1721.1/116370/11263_2017_1025_ReferencePDF.pdf?sequence=2&isAllowed=y"
@@ -50,6 +55,7 @@
   authors: "Vage Taamazyan, Achuta Kadambi, Ramesh Raskar"
   venue: "arXiv preprint 2016"
   year: 2016
+  date: "2016-05-06"
   thumbnail: "/assets/images/papers/shape_from_mixed_polar.png"
   links:
     pdf: "https://arxiv.org/pdf/1605.02066"
@@ -59,6 +65,7 @@
   authors: "Achuta Kadambi, Vage Taamazyan, Boxin Shi, Ramesh Raskar"
   venue: "ICCV 2015"
   year: 2015
+  date: "2015-12-13"
   thumbnail: "/assets/images/papers/polarized3d.jpg"
   links:
     pdf: "https://openaccess.thecvf.com/content_iccv_2015/papers/Kadambi_Polarized_3D_High-Quality_ICCV_2015_paper.pdf"

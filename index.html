@@ -37,13 +37,17 @@ title: Home
             {% for paper in site.data.papers %}
                 {% assign item = paper %}
                 {% assign item_type = "paper" %}
-                {% assign item_year = paper.year | default: 1900 %}
-                {% assign sort_key = item_year | prepend: '0000' | slice: -4, 4 %}
+                
+                {% if paper.date %}
+                    {% assign sort_date = paper.date %}
+                {% else %}
+                    {% assign sort_date = paper.year | append: "-01-01" %}
+                {% endif %}
                 
                 {% assign item_hash = hash %}
                 {% assign item_hash = item_hash | merge: {"content": item} %}
                 {% assign item_hash = item_hash | merge: {"type": item_type} %}
-                {% assign item_hash = item_hash | merge: {"sort_key": sort_key} %}
+                {% assign item_hash = item_hash | merge: {"sort_date": sort_date} %}
                 
                 {% assign all_items = all_items | push: item_hash %}
             {% endfor %}
@@ -53,22 +57,15 @@ title: Home
                 {% assign item_type = "project" %}
                 
                 {% if project.date %}
-                    {% assign date_parts = project.date | split: " " %}
-                    {% if date_parts.size > 1 %}
-                        {% assign item_year = date_parts.last %}
-                    {% else %}
-                        {% assign item_year = project.date %}
-                    {% endif %}
+                    {% assign sort_date = project.date %}
                 {% else %}
-                    {% assign item_year = 1900 %}
+                    {% assign sort_date = "1900-01-01" %}
                 {% endif %}
-                
-                {% assign sort_key = item_year | prepend: '0000' | slice: -4, 4 %}
                 
                 {% assign item_hash = hash %}
                 {% assign item_hash = item_hash | merge: {"content": item} %}
                 {% assign item_hash = item_hash | merge: {"type": item_type} %}
-                {% assign item_hash = item_hash | merge: {"sort_key": sort_key} %}
+                {% assign item_hash = item_hash | merge: {"sort_date": sort_date} %}
                 
                 {% assign all_items = all_items | push: item_hash %}
             {% endfor %}
@@ -76,18 +73,17 @@ title: Home
             {% for post in site.posts %}
                 {% assign item = post %}
                 {% assign item_type = "blog" %}
-                {% assign item_year = post.date | date: "%Y" %}
-                {% assign sort_key = item_year | prepend: '0000' | slice: -4, 4 %}
+                {% assign sort_date = post.date | date: "%Y-%m-%d" %}
                 
                 {% assign item_hash = hash %}
                 {% assign item_hash = item_hash | merge: {"content": item} %}
                 {% assign item_hash = item_hash | merge: {"type": item_type} %}
-                {% assign item_hash = item_hash | merge: {"sort_key": sort_key} %}
+                {% assign item_hash = item_hash | merge: {"sort_date": sort_date} %}
                 
                 {% assign all_items = all_items | push: item_hash %}
             {% endfor %}
             
-            {% assign sorted_items = all_items | sort: "sort_key" | reverse %}
+            {% assign sorted_items = all_items | sort: "sort_date" | reverse %}
             
             {% for item in sorted_items %}
                 {% if item.type == "paper" %}
@@ -124,7 +120,7 @@ title: Home
                     <div class="feed-info">
                         <span class="feed-tag">Project</span>
                         <h3>{{ item.content.title }}</h3>
-                        <p class="feed-meta">Released: {{ item.content.date }}</p>
+                        <p class="feed-meta">Released: {% if item.content.display_date %}{{ item.content.display_date }}{% else %}{{ item.content.date | date: "%B %Y" }}{% endif %}</p>
                         <p class="feed-excerpt">{{ item.content.description }}</p>
                         <div class="feed-links">
                             {% if item.content.links.demo %}
