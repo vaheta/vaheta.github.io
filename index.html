@@ -12,17 +12,17 @@ title: Home
                 <p class="subtitle">Senior Research Scientist in 3D Computer Vision for Robotics</p>
                 <h2>About Me</h2>
                 <p>Hey there! I'm a Senior Imaging Scientist at <a href="https://intrinsic.ai" target="_blank">Intrinsic</a>, where I help robots see. Fingers crossed that once they see the beauty of the world, they'll reconsider taking over!</p>
-                <p>I focus on <a href="#papers-section" class="inline-nav section-link" data-filter="paper">research</a> in 3D computer vision, work on fun <a href="#projects-section" class="inline-nav section-link" data-filter="project">side projects</a>, and occasionally write down my <a href="#blog-section" class="inline-nav section-link" data-filter="blog">ideas</a>. Feel free to explore!</p>
+                <p>I focus on <a href="#work-section" class="inline-nav section-link" data-filter="paper">research</a> in 3D computer vision, work on fun <a href="#work-section" class="inline-nav section-link" data-filter="project">side projects</a>, and occasionally write down my <a href="#work-section" class="inline-nav section-link" data-filter="blog">ideas</a>. Feel free to explore!</p>
                 {% include social-links.html %}
             </div>
         </div>
     </div>
 </section>
 
-<!-- Recent Work Section -->
-<section class="highlights no-top-padding">
+<!-- My Work Section -->
+<section id="work-section" class="highlights no-top-padding">
     <div class="container">
-        <h2>Recent Work</h2>
+        <h2>My Work</h2>
         
         <div class="feed-filters">
             <button class="filter-btn active" data-filter="all">All</button>
@@ -32,7 +32,7 @@ title: Home
         </div>
         
         <div class="combined-feed">
-            {% for paper in site.data.papers limit:2 %}
+            {% for paper in site.data.papers %}
             <div class="feed-item" data-type="paper">
                 <div class="feed-thumbnail">
                     <img src="{{ paper.thumbnail | relative_url }}" alt="{{ paper.title }} Thumbnail">
@@ -60,7 +60,7 @@ title: Home
             </div>
             {% endfor %}
             
-            {% for project in site.data.projects limit:1 %}
+            {% for project in site.data.projects %}
             <div class="feed-item" data-type="project">
                 <div class="feed-thumbnail">
                     <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
@@ -85,7 +85,7 @@ title: Home
             </div>
             {% endfor %}
             
-            {% for post in site.data.blog limit:2 %}
+            {% for post in site.posts %}
             <div class="feed-item" data-type="blog">
                 <div class="feed-thumbnail">
                     <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
@@ -93,115 +93,13 @@ title: Home
                 <div class="feed-info">
                     <span class="feed-tag">Blog</span>
                     <h3>"{{ post.title }}"</h3>
-                    <p class="feed-meta">Published: {{ post.date | date: "%B %d, %Y" }} • Tags: {{ post.tags }}</p>
-                    <p class="feed-excerpt">{{ post.excerpt }}</p>
+                    <p class="feed-meta">Published: {{ post.date | date: "%B %d, %Y" }} • Tags: {{ post.tags | join: ", " }}</p>
+                    <p class="feed-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
                     <div class="feed-links">
                         <a href="{{ post.url | relative_url }}" class="btn btn-small">Read More</a>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-        
-        <div class="view-all-links">
-            <a href="#papers-section" class="btn section-link" data-filter="paper">All Papers</a>
-            <a href="#projects-section" class="btn section-link" data-filter="project">All Projects</a>
-            <a href="#blog-section" class="btn section-link" data-filter="blog">All Blog Posts</a>
-        </div>
-    </div>
-</section>
-
-<!-- Papers Section -->
-<section id="papers-section" class="page-content">
-    <div class="container">
-        <h2>Research Papers</h2>
-        
-        <div class="paper-filters">
-            <button class="filter-btn active" data-filter="all">All Papers</button>
-            <button class="filter-btn" data-filter="2025">2025</button>
-            <button class="filter-btn" data-filter="2024">2024</button>
-            <button class="filter-btn" data-filter="2023">2023</button>
-            <button class="filter-btn" data-filter="older">2020 & Earlier</button>
-        </div>
-        
-        <div class="papers-list">
-            {% for paper in site.data.papers %}
-            <div class="paper-item" data-year="{{ paper.year }}">
-                <div class="paper-thumbnail">
-                    <img src="{{ paper.thumbnail | relative_url }}" alt="{{ paper.title }} Thumbnail">
-                </div>
-                <div class="paper-info">
-                    <h3>"{{ paper.title }}"</h3>
-                    <p class="authors">{{ paper.authors }}</p>
-                    <p class="venue"><strong>Conference/Journal:</strong> {{ paper.venue }}</p>
-                    <p class="abstract"><strong>Abstract:</strong> {{ paper.abstract }}</p>
-                    <div class="paper-links">
-                        {% if paper.links.pdf %}
-                        <a href="{{ paper.links.pdf }}" class="btn btn-small" target="_blank">PDF</a>
-                        {% endif %}
-                        {% if paper.links.code %}
-                        <a href="{{ paper.links.code }}" class="btn btn-small" target="_blank">Code</a>
-                        {% endif %}
-                        {% if paper.links.project %}
-                        <a href="{{ paper.links.project }}" class="btn btn-small" target="_blank">Project Page</a>
-                        {% endif %}
-                        {% if paper.links.bibtex %}
-                        <a href="{{ paper.links.bibtex }}" class="btn btn-small" target="_blank">BibTeX</a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects-section" class="page-content">
-    <div class="container">
-        <h2>Research Projects</h2>
-        
-        <div class="projects-grid">
-            {% for project in site.data.projects %}
-            <div class="project-card">
-                <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
-                <div class="project-info">
-                    <h3>{{ project.title }}</h3>
-                    <p>{{ project.description }}</p>
-                    <div class="project-links">
-                        {% if project.links.demo %}
-                        <a href="{{ project.links.demo }}" class="btn btn-small" target="_blank">Demo</a>
-                        {% endif %}
-                        {% if project.links.code %}
-                        <a href="{{ project.links.code }}" class="btn btn-small" target="_blank">Code</a>
-                        {% endif %}
-                        {% if project.links.paper %}
-                        <a href="{{ project.links.paper }}" class="btn btn-small" target="_blank">Paper</a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Blog Section -->
-<section id="blog-section" class="page-content">
-    <div class="container">
-        <h2>Blog Posts</h2>
-        
-        <div class="blog-posts">
-            {% for post in site.posts %}
-            <article class="blog-post">
-                <h3>"{{ post.title }}"</h3>
-                <div class="post-meta">
-                    <span class="post-date">Published: {{ post.date | date: "%B %d, %Y" }}</span>
-                    <span class="post-tags">Tags: {{ post.tags | join: ", " }}</span>
-                </div>
-                <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-                <a href="{{ post.url | relative_url }}" class="btn">Read More</a>
-            </article>
             {% endfor %}
         </div>
     </div>
