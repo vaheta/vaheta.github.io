@@ -36,6 +36,8 @@ title: Home
             
             {% for paper in site.data.papers %}
                 {% capture temp_item %}
+                    {% if paper.year %}{% assign item_year = paper.year %}{% else %}{% assign item_year = 1900 %}{% endif %}
+                    {{ item_year }}
                     <div class="feed-item" data-type="paper">
                         <div class="feed-thumbnail">
                             <img src="{{ paper.thumbnail | relative_url }}" alt="{{ paper.title }} Thumbnail">
@@ -61,14 +63,14 @@ title: Home
                             </div>
                         </div>
                     </div>
-                    {% if paper.year %}{% assign item_year = paper.year %}{% else %}{% assign item_year = 1900 %}{% endif %}
-                    {{ item_year }}
                 {% endcapture %}
                 {% assign all_items = all_items | push: temp_item %}
             {% endfor %}
             
             {% for project in site.data.projects %}
                 {% capture temp_item %}
+                    {% if project.date %}{% assign date_parts = project.date | split: " " %}{% if date_parts.size > 1 %}{% assign item_year = date_parts.last %}{% else %}{% assign item_year = project.date %}{% endif %}{% else %}{% assign item_year = 1900 %}{% endif %}
+                    {{ item_year }}
                     <div class="feed-item" data-type="project">
                         <div class="feed-thumbnail">
                             <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
@@ -91,14 +93,13 @@ title: Home
                             </div>
                         </div>
                     </div>
-                    {% if project.date %}{% assign date_parts = project.date | split: " " %}{% if date_parts.size > 1 %}{% assign item_year = date_parts.last %}{% else %}{% assign item_year = project.date %}{% endif %}{% else %}{% assign item_year = 1900 %}{% endif %}
-                    {{ item_year }}
                 {% endcapture %}
                 {% assign all_items = all_items | push: temp_item %}
             {% endfor %}
             
             {% for post in site.posts %}
                 {% capture temp_item %}
+                    {{ post.date | date: "%Y" }}
                     <div class="feed-item" data-type="blog">
                         <div class="feed-thumbnail">
                             <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
@@ -113,7 +114,6 @@ title: Home
                             </div>
                         </div>
                     </div>
-                    {{ post.date | date: "%Y" }}
                 {% endcapture %}
                 {% assign all_items = all_items | push: temp_item %}
             {% endfor %}
@@ -123,7 +123,7 @@ title: Home
             {% for item_with_year in sorted_items %}
                 {% assign parts = item_with_year | split: "
                     " %}
-                {% assign item_html = parts | pop | join: "
+                {% assign item_html = parts | shift | join: "
                     " %}
                 {{ item_html }}
             {% endfor %}
