@@ -1,0 +1,6 @@
+<footer>
+    <div class="container">
+        <p>&copy; {{ site.time | date: '%Y' }} Vahe Taamazyan. All rights reserved.</p>
+        <p>Contact: <a href="javascript:void(0)" onclick="window.location.href = 'mailto:' + '{{ site.email | split: '@' | first }}' + '@' + '{{ site.email | split: '@' | last }}'">{{ site.email | split: '@' | first }}<!--@-->&#64;<!--.-->{{ site.email | split: '@' | last }}</a></p>
+    </div>
+</footer>

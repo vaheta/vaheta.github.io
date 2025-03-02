@@ -1,0 +1,17 @@
+- title: "Project 1 Name"
+  description: "Brief description of the project, its goals, and outcomes..."
+  date: "January 2025"
+  thumbnail: "/assets/images/projects/project1.jpg"
+  links:
+    demo: "#"
+    code: "#"
+    paper: "#"
+
+- title: "Project 2 Name"
+  description: "Brief description of the project, its goals, and outcomes..."
+  date: "November 2024"
+  thumbnail: "/assets/images/projects/project2.jpg"
+  links:
+    demo: "#"
+    code: "#"
+    paper: "#"

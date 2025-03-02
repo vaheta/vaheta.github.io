@@ -1,145 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vahe Taamazyan - 3D Computer Vision Researcher</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <section class="hero-header no-border">
-        <div class="container">
-            <div class="profile-container">
-                <img src="images/profile.jpg" alt="Vahe Taamazyan" class="profile-image">
-                <div class="profile-text">
-                    <h1>Vahe Taamazyan</h1>
-                    <p class="subtitle">Senior Research Scientist in 3D Computer Vision for Robotics</p>
-                    <h2>About Me</h2>
-                    <p>Hey there! I'm a Senior Imaging Scientist at <a href="https://intrinsic.ai" target="_blank">Intrinsic</a>, where I help robots see. Fingers crossed that once they see the beauty of the world, they'll reconsider taking over!</p>
-                    <p>I focus on <a href="papers.html" class="inline-nav">research</a> in 3D computer vision, work on fun <a href="projects.html" class="inline-nav">side projects</a>, and occasionally write down my <a href="blog.html" class="inline-nav">ideas</a>. Feel free to explore!</p>
-                    <div class="social-links">
-                        <a href="https://github.com/vaheta" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/vaheta" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://twitter.com/vaheta" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://scholar.google.com/citations?user=kzOv34UAAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-                    </div>
-                </div>
+---
+layout: default
+title: Home
+---
+
+<section class="hero-header no-border">
+    <div class="container">
+        <div class="profile-container">
+            <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Vahe Taamazyan" class="profile-image">
+            <div class="profile-text">
+                <h1>Vahe Taamazyan</h1>
+                <p class="subtitle">Senior Research Scientist in 3D Computer Vision for Robotics</p>
+                <h2>About Me</h2>
+                <p>Hey there! I'm a Senior Imaging Scientist at <a href="https://intrinsic.ai" target="_blank">Intrinsic</a>, where I help robots see. Fingers crossed that once they see the beauty of the world, they'll reconsider taking over!</p>
+                <p>I focus on <a href="{{ '/papers.html' | relative_url }}" class="inline-nav">research</a> in 3D computer vision, work on fun <a href="{{ '/projects.html' | relative_url }}" class="inline-nav">side projects</a>, and occasionally write down my <a href="{{ '/blog.html' | relative_url }}" class="inline-nav">ideas</a>. Feel free to explore!</p>
+                {% include social-links.html %}
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="highlights no-top-padding">
-        <div class="container">
-            <h2>Recent Work</h2>
-            
-            <div class="feed-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="paper">Papers</button>
-                <button class="filter-btn" data-filter="project">Projects</button>
-                <button class="filter-btn" data-filter="blog">Blog Posts</button>
-            </div>
-            
-            <div class="combined-feed">
-                <!-- Paper Item -->
-                <div class="feed-item" data-type="paper">
-                    <div class="feed-thumbnail">
-                        <img src="images/placeholder-paper1.jpg" alt="Paper 1 Thumbnail">
-                    </div>
-                    <div class="feed-info">
-                        <span class="feed-tag">Paper</span>
-                        <h3>"[Paper Title 1]"</h3>
-                        <p class="feed-meta">[Author List] • [Conference/Journal], 2025</p>
-                        <p class="feed-excerpt">[Brief abstract of the paper...]</p>
-                        <div class="feed-links">
-                            <a href="papers.html" class="btn btn-small">View Details</a>
-                            <a href="#" class="btn btn-small">PDF</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project Item -->
-                <div class="feed-item" data-type="project">
-                    <div class="feed-thumbnail">
-                        <img src="images/projects/project1.jpg" alt="Project 1">
-                    </div>
-                    <div class="feed-info">
-                        <span class="feed-tag">Project</span>
-                        <h3>[Project 1 Name]</h3>
-                        <p class="feed-meta">Released: January 2025</p>
-                        <p class="feed-excerpt">[Brief description of the project, its goals, and outcomes...]</p>
-                        <div class="feed-links">
-                            <a href="projects.html" class="btn btn-small">View Details</a>
-                            <a href="#" class="btn btn-small">Demo</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Blog Post Item -->
-                <div class="feed-item" data-type="blog">
-                    <div class="feed-thumbnail">
-                        <img src="images/blog/blog1.jpg" alt="Blog Post 1">
-                    </div>
-                    <div class="feed-info">
-                        <span class="feed-tag">Blog</span>
-                        <h3>"[Blog Post Title 1]"</h3>
-                        <p class="feed-meta">Published: January 15, 2025 • Tags: 3D Vision, SLAM, Robotics</p>
-                        <p class="feed-excerpt">[Brief excerpt or introduction to the blog post...]</p>
-                        <div class="feed-links">
-                            <a href="blog.html" class="btn btn-small">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Paper Item -->
-                <div class="feed-item" data-type="paper">
-                    <div class="feed-thumbnail">
-                        <img src="images/placeholder-paper2.jpg" alt="Paper 2 Thumbnail">
-                    </div>
-                    <div class="feed-info">
-                        <span class="feed-tag">Paper</span>
-                        <h3>"[Paper Title 2]"</h3>
-                        <p class="feed-meta">[Author List] • [Conference/Journal], 2024</p>
-                        <p class="feed-excerpt">[Brief abstract of the paper...]</p>
-                        <div class="feed-links">
-                            <a href="papers.html" class="btn btn-small">View Details</a>
-                            <a href="#" class="btn btn-small">PDF</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Blog Post Item -->
-                <div class="feed-item" data-type="blog">
-                    <div class="feed-thumbnail">
-                        <img src="images/blog/blog2.jpg" alt="Blog Post 2">
-                    </div>
-                    <div class="feed-info">
-                        <span class="feed-tag">Blog</span>
-                        <h3>"[Blog Post Title 2]"</h3>
-                        <p class="feed-meta">Published: November 20, 2024 • Tags: Point Clouds, Deep Learning</p>
-                        <p class="feed-excerpt">[Brief excerpt or introduction to the blog post...]</p>
-                        <div class="feed-links">
-                            <a href="blog.html" class="btn btn-small">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="view-all-links">
-                <a href="papers.html" class="btn">All Papers</a>
-                <a href="projects.html" class="btn">All Projects</a>
-                <a href="blog.html" class="btn">All Blog Posts</a>
-            </div>
+<section class="highlights no-top-padding">
+    <div class="container">
+        <h2>Recent Work</h2>
+        
+        <div class="feed-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="paper">Papers</button>
+            <button class="filter-btn" data-filter="project">Projects</button>
+            <button class="filter-btn" data-filter="blog">Blog Posts</button>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Vahe Taamazyan. All rights reserved.</p>
-            <p>Contact: <a href="javascript:void(0)" onclick="window.location.href = 'mailto:' + 'vaheta' + '@' + 'gmail.com'">vaheta<!--@-->&#64;<!--.-->gmail<!--.-->&#46;com</a></p>
+        
+        <div class="combined-feed">
+            {% for paper in site.data.papers limit:2 %}
+            <div class="feed-item" data-type="paper">
+                <div class="feed-thumbnail">
+                    <img src="{{ paper.thumbnail | relative_url }}" alt="{{ paper.title }} Thumbnail">
+                </div>
+                <div class="feed-info">
+                    <span class="feed-tag">Paper</span>
+                    <h3>"{{ paper.title }}"</h3>
+                    <p class="feed-meta">{{ paper.authors }} • {{ paper.venue }}</p>
+                    <p class="feed-excerpt">{{ paper.abstract }}</p>
+                    <div class="feed-links">
+                        <a href="{{ '/papers.html' | relative_url }}" class="btn btn-small">View Details</a>
+                        {% if paper.links.pdf %}
+                        <a href="{{ paper.links.pdf }}" class="btn btn-small">PDF</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+            {% for project in site.data.projects limit:1 %}
+            <div class="feed-item" data-type="project">
+                <div class="feed-thumbnail">
+                    <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+                </div>
+                <div class="feed-info">
+                    <span class="feed-tag">Project</span>
+                    <h3>{{ project.title }}</h3>
+                    <p class="feed-meta">Released: {{ project.date }}</p>
+                    <p class="feed-excerpt">{{ project.description }}</p>
+                    <div class="feed-links">
+                        <a href="{{ '/projects.html' | relative_url }}" class="btn btn-small">View Details</a>
+                        {% if project.links.demo %}
+                        <a href="{{ project.links.demo }}" class="btn btn-small">Demo</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+            {% for post in site.data.blog limit:2 %}
+            <div class="feed-item" data-type="blog">
+                <div class="feed-thumbnail">
+                    <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+                </div>
+                <div class="feed-info">
+                    <span class="feed-tag">Blog</span>
+                    <h3>"{{ post.title }}"</h3>
+                    <p class="feed-meta">Published: {{ post.date | date: "%B %d, %Y" }} • Tags: {{ post.tags }}</p>
+                    <p class="feed-excerpt">{{ post.excerpt }}</p>
+                    <div class="feed-links">
+                        <a href="{{ post.url | relative_url }}" class="btn btn-small">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
+        
+        <div class="view-all-links">
+            <a href="{{ '/papers.html' | relative_url }}" class="btn">All Papers</a>
+            <a href="{{ '/projects.html' | relative_url }}" class="btn">All Projects</a>
+            <a href="{{ '/blog.html' | relative_url }}" class="btn">All Blog Posts</a>
+        </div>
+    </div>
+</section>

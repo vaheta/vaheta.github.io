@@ -1,0 +1,22 @@
+- title: "Paper Title 1"
+  authors: "Author List including Vahe Taamazyan"
+  venue: "Conference/Journal, 2025"
+  year: 2025
+  abstract: "Brief abstract of the paper..."
+  thumbnail: "/assets/images/papers/paper1.jpg"
+  links:
+    pdf: "#"
+    code: "#"
+    project: "#"
+    bibtex: "#"
+
+- title: "Paper Title 2"
+  authors: "Author List including Vahe Taamazyan"
+  venue: "Conference/Journal, 2024"
+  year: 2024
+  abstract: "Brief abstract of the paper..."
+  thumbnail: "/assets/images/papers/paper2.jpg"
+  links:
+    pdf: "#"
+    code: "#"
+    bibtex: "#"
