@@ -11,12 +11,9 @@ permalink: /blog/:title/
 
 # Collections
 collections:
-  papers:
+  posts:
     output: true
-    permalink: /papers/:path/
-  projects:
-    output: true
-    permalink: /projects/:path/
+    permalink: /blog/:title/
 
 # Defaults
 defaults:

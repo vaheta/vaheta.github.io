@@ -235,6 +235,7 @@ nav a.active::after {
 /* Page Content */
 .page-content {
     padding: 4rem 0;
+    border-top: 1px solid var(--border-color);
 }
 
 /* Papers Page */
@@ -565,4 +566,23 @@ footer {
 /* Optional: make the background consistent between sections */
 .highlights {
     background-color: var(--bg-color); /* Match the body background */
+}
+
+/* Section navigation */
+.section-link {
+    cursor: pointer;
+}
+
+/* Add some spacing between sections */
+#papers-section, #projects-section, #blog-section {
+    scroll-margin-top: 2rem;
+}
+
+/* Alternate section background colors for visual separation */
+#papers-section {
+    background-color: var(--light-bg);
+}
+
+#blog-section {
+    background-color: var(--light-bg);
 }
