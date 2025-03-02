@@ -74,7 +74,7 @@ title: Home
                         </div>
                         <div class="feed-info">
                             <span class="feed-tag">Paper</span>
-                            <h3>"{{ paper.title }}"</h3>
+                            <h3>{{ paper.title }}</h3>
                             <p class="feed-meta">{{ paper.authors }} • {{ paper.venue }}</p>
                             <p class="feed-excerpt">{{ paper.abstract }}</p>
                             <div class="feed-links">
@@ -125,7 +125,7 @@ title: Home
                         </div>
                         <div class="feed-info">
                             <span class="feed-tag">Blog</span>
-                            <h3>"{{ post.title }}"</h3>
+                            <h3>{{ post.title }}</h3>
                             <p class="feed-meta">Published: {{ post.date | date: "%B %d, %Y" }}</p>
                             <p class="feed-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
                             <div class="feed-links">
