@@ -35,9 +35,9 @@ title: Home
             {% assign all_items = '' | split: '' %}
             
             {% for paper in site.data.papers %}
+                {% assign year_prefix = paper.year | prepend: '0000' | slice: -4, 4 %}
                 {% capture temp_item %}
-                    {% if paper.year %}{% assign item_year = paper.year %}{% else %}{% assign item_year = 1900 %}{% endif %}
-                    {{ item_year }}
+                    {{ year_prefix }}YEARMARKER
                     <div class="feed-item" data-type="paper">
                         <div class="feed-thumbnail">
                             <img src="{{ paper.thumbnail | relative_url }}" alt="{{ paper.title }} Thumbnail">
@@ -68,9 +68,10 @@ title: Home
             {% endfor %}
             
             {% for project in site.data.projects %}
+                {% capture year_raw %}{% if project.date %}{% assign date_parts = project.date | split: " " %}{% if date_parts.size > 1 %}{{ date_parts.last }}{% else %}{{ project.date }}{% endif %}{% else %}1900{% endif %}{% endcapture %}
+                {% assign year_prefix = year_raw | prepend: '0000' | slice: -4, 4 %}
                 {% capture temp_item %}
-                    {% if project.date %}{% assign date_parts = project.date | split: " " %}{% if date_parts.size > 1 %}{% assign item_year = date_parts.last %}{% else %}{% assign item_year = project.date %}{% endif %}{% else %}{% assign item_year = 1900 %}{% endif %}
-                    {{ item_year }}
+                    {{ year_prefix }}YEARMARKER
                     <div class="feed-item" data-type="project">
                         <div class="feed-thumbnail">
                             <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
@@ -98,8 +99,9 @@ title: Home
             {% endfor %}
             
             {% for post in site.posts %}
+                {% assign year_prefix = post.date | date: "%Y" | prepend: '0000' | slice: -4, 4 %}
                 {% capture temp_item %}
-                    {{ post.date | date: "%Y" }}
+                    {{ year_prefix }}YEARMARKER
                     <div class="feed-item" data-type="blog">
                         <div class="feed-thumbnail">
                             <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
@@ -121,11 +123,8 @@ title: Home
             {% assign sorted_items = all_items | sort | reverse %}
             
             {% for item_with_year in sorted_items %}
-                {% assign parts = item_with_year | split: "
-                    " %}
-                {% assign item_html = parts | shift | join: "
-                    " %}
-                {{ item_html }}
+                {% assign clean_item = item_with_year | split: 'YEARMARKER' | last %}
+                {{ clean_item }}
             {% endfor %}
         </div>
     </div>
