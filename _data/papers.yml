@@ -2,19 +2,65 @@
   authors: "Agastya Kalra, Vage Taamazyan, Alberto Dall'Olio, Raghav Khanna, Tomas Gerlich, Georgia Giannopoulou, Guy Stoppi, Daniel Baxter, Abhijit Ghosh, Rick Szeliski, Kartik Venkataraman"
   venue: "SIGGRAPH Asia 2024"
   year: 2024
-  thumbnail: "/assets/images/papers/mbcres.jpg"
+  thumbnail: "/assets/images/papers/mbcres.png"
   links:
     pdf: "https://dl.acm.org/doi/pdf/10.1145/3680528.3687665"
     project: "https://akasha-imaging.github.io/plenoptic-vision/"
     bibtex: "https://scholar.googleusercontent.com/scholar.bib?q=info:QmWr7KBczjkJ:scholar.google.com/&output=citation&scisdr=ClHYt_iBEIb3m3YI3Gc:AFWwaeYAAAAAZ8QOxGfWFHOlUvMxllnu9JBrxlo&scisig=AFWwaeYAAAAAZ8QOxH_NEoEmpQYv7rJfaLJTbCc&scisf=4&ct=citation&cd=-1&hl=en"
 
-- title: "Paper Title 2"
-  authors: "Author List including Vahe Taamazyan"
-  venue: "Conference/Journal, 2024"
+- title: "Collision Avoidance Metric for 3D Camera Evaluation"
+  authors: "Vage Taamazyan, Alberto Dall'olio, Agastya Kalra"
+  venue: "CVPR VLADR 2024"
   year: 2024
-  abstract: "Brief abstract of the paper..."
-  thumbnail: "/assets/images/papers/paper2.jpg"
+  thumbnail: "/assets/images/papers/collision_metric_viz.png"
   links:
-    pdf: "#"
-    code: "#"
-    bibtex: "#"
+    pdf: "https://arxiv.org/pdf/2405.09755"
+    code: "https://github.com/intrinsic-ai/collision-avoidance-metric"
+    bibtex: "https://scholar.googleusercontent.com/scholar.bib?q=info:1gD_ptp7BHwJ:scholar.google.com/&output=citation&scisdr=ClHYt_iBEIb3m3bXNU8:AFWwaeYAAAAAZ8TRLU8TfcGRpsdzW-WX6h0KsU8&scisig=AFWwaeYAAAAAZ8TRLVn9SeZNj0E97HsphCFpPPU&scisf=4&ct=citation&cd=-1&hl=en"
+
+- title: "Towards Co-Evaluation of Cameras HDR and Algorithms for Industrial-Grade 6DoF Pose Estimation"
+  authors: "Agastya Kalra, Guy Stoppi, Dmitrii Marin, Vage Taamazyan, Aarrushi Shandilya, Rishav Agarwal, Anton Boykov, Tze Hao Chong, Michael Stark"
+  venue: "CVPR 2024"
+  year: 2024
+  thumbnail: "/assets/images/papers/towards6dof.png"
+  links:
+    pdf: "https://openaccess.thecvf.com/content/CVPR2024/papers/Kalra_Towards_Co-Evaluation_of_Cameras_HDR_and_Algorithms_for_Industrial-Grade_6DoF_CVPR_2024_paper.pdf"
+    code: "https://github.com/intrinsic-ai/ipd"
+    bibtex: "https://scholar.googleusercontent.com/scholar.bib?q=info:kbCBZRqZ16YJ:scholar.google.com/&output=citation&scisdr=ClHYt_iBEIb3m3bXzok:AFWwaeYAAAAAZ8TR1ol1veo4-GYZyKoruFMbTfk&scisig=AFWwaeYAAAAAZ8TR1oOXatm_au_nbDGkjXDmI_E&scisf=4&ct=citation&cd=-1&hl=en"
+
+- title: "Deep polarization cues for transparent object segmentation"
+  authors: "Agastya Kalra, Vage Taamazyan, Supreeth Krishna Rao, Kartik Venkataraman, Ramesh Raskar, Achuta Kadambi"
+  venue: "CVPR 2020"
+  year: 2020
+  thumbnail: "/assets/images/papers/deep_polarization_transparent.png"
+  links:
+    pdf: "https://openaccess.thecvf.com/content_CVPR_2020/papers/Kalra_Deep_Polarization_Cues_for_Transparent_Object_Segmentation_CVPR_2020_paper.pdf"
+    bibtex: "https://scholar.googleusercontent.com/scholar.bib?q=info:z59WGuB6zMAJ:scholar.google.com/&output=citation&scisdr=ClHYt_iBEIb3m3bUIxE:AFWwaeYAAAAAZ8TSOxEXwboDHb-JqfmkGkKLKEY&scisig=AFWwaeYAAAAAZ8TSOyUgZVeqsRTQNx4jbzSkx5k&scisf=4&ct=citation&cd=-1&hl=en"
+
+- title: "Depth sensing using geometrically constrained polarization normals"
+  authors: "Achuta Kadambi, Vage Taamazyan, Boxin Shi, Ramesh Raskar"
+  venue: "IJCV 2017"
+  year: 2017
+  thumbnail: "/assets/images/papers/ijcv2017.png"
+  links:
+    pdf: "https://dspace.mit.edu/bitstream/handle/1721.1/116370/11263_2017_1025_ReferencePDF.pdf?sequence=2&isAllowed=y"
+    bibtex: "https://scholar.googleusercontent.com/scholar.bib?q=info:pz_XhTy-ot4J:scholar.google.com/&output=citation&scisdr=ClHYt_iBEIb3m3bVHZU:AFWwaeYAAAAAZ8TTBZU0cXzJ8tyuIuA4fn4Zl-g&scisig=AFWwaeYAAAAAZ8TTBQjRyRrOWBLkBZLOLKkzg24&scisf=4&ct=citation&cd=-1&hl=en"
+
+- title: "Shape from Mixed Polarization"
+  authors: "Vage Taamazyan, Achuta Kadambi, Ramesh Raskar"
+  venue: "arXiv preprint 2016"
+  year: 2016
+  thumbnail: "/assets/images/papers/shape_from_mixed_polar.png"
+  links:
+    pdf: "https://arxiv.org/pdf/1605.02066"
+    bibtex: "https://scholar.googleusercontent.com/scholar.bib?q=info:UI72vmLETh0J:scholar.google.com/&output=citation&scisdr=ClHYt_iBEIb3m3bV_Nw:AFWwaeYAAAAAZ8TT5NzK-VyWJcTAqMetJTaU-Wg&scisig=AFWwaeYAAAAAZ8TT5KiVKFFl_dePB5O2u1AP3aE&scisf=4&ct=citation&cd=-1&hl=en"
+
+- title: "Polarized 3D: High-quality depth sensing with polarization cues"
+  authors: "Achuta Kadambi, Vage Taamazyan, Boxin Shi, Ramesh Raskar"
+  venue: "ICCV 2015"
+  year: 2015
+  thumbnail: "/assets/images/papers/polarized3d.jpg"
+  links:
+    pdf: "https://openaccess.thecvf.com/content_iccv_2015/papers/Kadambi_Polarized_3D_High-Quality_ICCV_2015_paper.pdf"
+    bibtex: "https://scholar.googleusercontent.com/scholar.bib?q=info:DVgxVkD3nX8J:scholar.google.com/&output=citation&scisdr=ClHYt_iBEIb3m3bS2Sw:AFWwaeYAAAAAZ8TUwSwikdd_78wbnXZGXQpF7cs&scisig=AFWwaeYAAAAAZ8TUwfkVB5Tps80VSjuzz54nPbA&scisf=4&ct=citation&cd=-1&hl=en"
+
