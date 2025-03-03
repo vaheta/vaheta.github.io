@@ -500,12 +500,11 @@ footer {
     background: none;
     color: var(--primary-color);
     font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border: 1px solid currentColor;
-    border-radius: 0;
+    border: none;
 }
 
 .feed-info h3 {
@@ -541,17 +540,14 @@ footer {
 /* Tag colors */
 .feed-item[data-type="paper"] .feed-tag {
     color: #0066cc;
-    border-color: #0066cc;
 }
 
 .feed-item[data-type="project"] .feed-tag {
     color: #339933;
-    border-color: #339933;
 }
 
 .feed-item[data-type="blog"] .feed-tag {
     color: #993399;
-    border-color: #993399;
 }
 
 @media (max-width: 768px) {
