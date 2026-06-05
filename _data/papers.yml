@@ -1,3 +1,13 @@
+- title: "3D-Object Perception Transformer (3PT)"
+  authors: "Agastya Kalra, Tim Salzmann, Guy Stoppi, Dmitrii Marin, Rishav Agarwal, Vage Taamazyan, Martin Bokeloh, Stefan Hinterstoisser, Anton Boykov, Alberto Dall'Olio, Pravin Dangol, Kartik Venkataraman, Huaijin Chen"
+  venue: "CVPR 2026 Highlight"
+  year: 2026
+  date: "2026-06-03"
+  thumbnail: "/assets/images/papers/3pt.png"
+  links:
+    pdf: "https://44706966.fs1.hubspotusercontent-na1.net/hubfs/44706966/Website%20Files/Publications/CVPR%202026%20Intrinsic%20-%203D-Object%20Perception%20Transformer%20-%20Main.pdf"
+    project: "https://www.intrinsic.ai/publications/3pt-cvpr2026"
+
 - title: "A Plenoptic 3D Vision System"
   authors: "Agastya Kalra, Vage Taamazyan, Alberto Dall'Olio, Raghav Khanna, Tomas Gerlich, Georgia Giannopoulou, Guy Stoppi, Daniel Baxter, Abhijit Ghosh, Rick Szeliski, Kartik Venkataraman"
   venue: "SIGGRAPH Asia 2024"
@@ -63,4 +73,3 @@
   thumbnail: "/assets/images/papers/polarized3d.jpg"
   links:
     pdf: "https://openaccess.thecvf.com/content_iccv_2015/papers/Kadambi_Polarized_3D_High-Quality_ICCV_2015_paper.pdf"
-
