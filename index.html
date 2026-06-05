@@ -5,12 +5,17 @@ title: Home
 
 <section class="hero-header no-border">
     <div class="container">
+        <div class="site-status">
+            <span>3D Vision</span>
+            <span>Robotics</span>
+            <span>Industrial Perception</span>
+        </div>
         <div class="profile-container">
             <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Vahe Taamazyan" class="profile-image">
             <div class="profile-text">
                 <h1>Vahe Taamazyan</h1>
                 <p class="subtitle">Senior Research Scientist in 3D Computer Vision for Robotics</p>
-                <h2>About Me</h2>
+                <h2>About</h2>
                 <p>Hey there! I'm a Senior Imaging Scientist at <a href="https://intrinsic.ai" target="_blank">Intrinsic</a>, where I help robots see. Fingers crossed that once they see the beauty of the world, they'll reconsider taking over!</p>
                 <p>I focus on <a href="#work-section" class="inline-nav section-link" data-filter="paper">research</a> in 3D computer vision, work on fun <a href="#work-section" class="inline-nav section-link" data-filter="project">side projects</a>, and occasionally write down my <a href="#work-section" class="inline-nav section-link" data-filter="blog">ideas</a>. Feel free to explore!</p>
                 {% include social-links.html %}
@@ -68,12 +73,15 @@ title: Home
                 
                 {% if item_type == 'paper' %}
                     {% assign paper = site.data.papers[item_index] %}
-                    <div class="feed-item" data-type="paper">
+                    <div class="feed-item {% if forloop.first %}feed-item--featured{% endif %}" data-type="paper">
                         <div class="feed-thumbnail">
                             <img src="{{ paper.thumbnail | relative_url }}" alt="{{ paper.title }} Thumbnail">
                         </div>
                         <div class="feed-info">
-                            <span class="feed-tag">Paper</span>
+                            <div class="feed-kicker">
+                                <span class="feed-tag">Paper</span>
+                                <span>{{ paper.year }}</span>
+                            </div>
                             <h3>{{ paper.title }}</h3>
                             <p class="feed-meta">{{ paper.authors }} • {{ paper.venue }}</p>
                             <p class="feed-excerpt">{{ paper.abstract }}</p>
@@ -95,12 +103,15 @@ title: Home
                     </div>
                 {% elsif item_type == 'project' %}
                     {% assign project = site.data.projects[item_index] %}
-                    <div class="feed-item" data-type="project">
+                    <div class="feed-item {% if forloop.first %}feed-item--featured{% endif %}" data-type="project">
                         <div class="feed-thumbnail">
                             <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
                         </div>
                         <div class="feed-info">
-                            <span class="feed-tag">Project</span>
+                            <div class="feed-kicker">
+                                <span class="feed-tag">Project</span>
+                                <span>{% if project.display_date %}{{ project.display_date }}{% else %}{{ project.date | date: "%Y" }}{% endif %}</span>
+                            </div>
                             <h3>{{ project.title }}</h3>
                             <p class="feed-meta">Released: {% if project.display_date %}{{ project.display_date }}{% else %}{{ project.date | date: "%B %Y" }}{% endif %}</p>
                             <p class="feed-excerpt">{{ project.description }}</p>
@@ -119,12 +130,15 @@ title: Home
                     </div>
                 {% elsif item_type == 'blog' %}
                     {% assign post = site.posts[item_index] %}
-                    <div class="feed-item" data-type="blog">
+                    <div class="feed-item {% if forloop.first %}feed-item--featured{% endif %}" data-type="blog">
                         <div class="feed-thumbnail">
                             <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
                         </div>
                         <div class="feed-info">
-                            <span class="feed-tag">Blog</span>
+                            <div class="feed-kicker">
+                                <span class="feed-tag">Blog</span>
+                                <span>{{ post.date | date: "%Y" }}</span>
+                            </div>
                             <h3>{{ post.title }}</h3>
                             <p class="feed-meta">Published: {{ post.date | date: "%B %d, %Y" }}</p>
                             <p class="feed-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
