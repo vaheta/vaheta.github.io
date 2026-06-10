@@ -5,16 +5,18 @@ title: Home
 
 <section class="hero-header no-border">
     <div class="container">
-        <div class="site-status">
-            <span>3D Vision</span>
-            <span>Robotics</span>
-            <span>Industrial Perception</span>
-        </div>
         <div class="profile-container">
-            <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Vahe Taamazyan" class="profile-image">
+            <div class="profile-frame">
+                <img src="{{ '/assets/images/profile.jpg' | relative_url }}" data-depth="{{ '/assets/images/profile_depth.png' | relative_url }}" alt="Vahe Taamazyan" class="profile-image">
+                <canvas id="profile-pointcloud" aria-hidden="true"></canvas>
+                <span class="corner corner-tl"></span>
+                <span class="corner corner-tr"></span>
+                <span class="corner corner-bl"></span>
+                <span class="corner corner-br"></span>
+            </div>
             <div class="profile-text">
-                <h1>Vahe Taamazyan</h1>
-                <p class="subtitle">Senior Research Scientist in 3D Computer Vision for Robotics</p>
+                <h1>Vahe Taamazyan<span class="cursor" aria-hidden="true"></span></h1>
+                <p class="subtitle">Senior Research Scientist · 3D Computer Vision for Robotics</p>
                 <h2>About</h2>
                 <p>Hey there! I'm a Senior Imaging Scientist at <a href="https://intrinsic.ai" target="_blank">Intrinsic</a>, where I help robots see. Fingers crossed that once they see the beauty of the world, they'll reconsider taking over!</p>
                 <p>I focus on <a href="#work-section" class="inline-nav section-link" data-filter="paper">research</a> in 3D computer vision, work on fun <a href="#work-section" class="inline-nav section-link" data-filter="project">side projects</a>, and occasionally write down my <a href="#work-section" class="inline-nav section-link" data-filter="blog">ideas</a>. Feel free to explore!</p>
@@ -65,7 +67,10 @@ title: Home
             
             {% assign sorted_items = combined_items | sort | reverse %}
             
+            {% assign feed_total = sorted_items | size %}
             {% for item in sorted_items %}
+                {% assign feed_num = feed_total | minus: forloop.index0 %}
+                {% assign feed_id = feed_num | prepend: '000' | slice: -3, 3 %}
                 {% assign item_parts = item | split: '_' %}
                 {% assign item_date = item_parts[0] %}
                 {% assign item_type = item_parts[1] %}
@@ -79,6 +84,7 @@ title: Home
                         </div>
                         <div class="feed-info">
                             <div class="feed-kicker">
+                                <span class="feed-index">[{{ feed_id }}]</span>
                                 <span class="feed-tag">Paper</span>
                                 <span>{{ paper.year }}</span>
                             </div>
@@ -87,16 +93,16 @@ title: Home
                             <p class="feed-excerpt">{{ paper.abstract }}</p>
                             <div class="feed-links">
                                 {% if paper.links.pdf %}
-                                <a href="{{ paper.links.pdf }}" class="btn btn-small" target="_blank">PDF</a>
+                                <a href="{{ paper.links.pdf }}" class="feed-link" target="_blank">PDF</a>
                                 {% endif %}
                                 {% if paper.links.code %}
-                                <a href="{{ paper.links.code }}" class="btn btn-small" target="_blank">Code</a>
+                                <a href="{{ paper.links.code }}" class="feed-link" target="_blank">Code</a>
                                 {% endif %}
                                 {% if paper.links.project %}
-                                <a href="{{ paper.links.project }}" class="btn btn-small" target="_blank">Project Page</a>
+                                <a href="{{ paper.links.project }}" class="feed-link" target="_blank">Project Page</a>
                                 {% endif %}
                                 {% if paper.links.bibtex %}
-                                <a href="{{ paper.links.bibtex }}" class="btn btn-small" target="_blank">BibTeX</a>
+                                <a href="{{ paper.links.bibtex }}" class="feed-link" target="_blank">BibTeX</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -109,6 +115,7 @@ title: Home
                         </div>
                         <div class="feed-info">
                             <div class="feed-kicker">
+                                <span class="feed-index">[{{ feed_id }}]</span>
                                 <span class="feed-tag">Project</span>
                                 <span>{% if project.display_date %}{{ project.display_date }}{% else %}{{ project.date | date: "%Y" }}{% endif %}</span>
                             </div>
@@ -117,13 +124,13 @@ title: Home
                             <p class="feed-excerpt">{{ project.description }}</p>
                             <div class="feed-links">
                                 {% if project.links.demo %}
-                                <a href="{{ project.links.demo }}" class="btn btn-small" target="_blank">Demo</a>
+                                <a href="{{ project.links.demo }}" class="feed-link" target="_blank">Demo</a>
                                 {% endif %}
                                 {% if project.links.code %}
-                                <a href="{{ project.links.code }}" class="btn btn-small" target="_blank">Code</a>
+                                <a href="{{ project.links.code }}" class="feed-link" target="_blank">Code</a>
                                 {% endif %}
                                 {% if project.links.paper %}
-                                <a href="{{ project.links.paper }}" class="btn btn-small" target="_blank">Paper</a>
+                                <a href="{{ project.links.paper }}" class="feed-link" target="_blank">Paper</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -136,6 +143,7 @@ title: Home
                         </div>
                         <div class="feed-info">
                             <div class="feed-kicker">
+                                <span class="feed-index">[{{ feed_id }}]</span>
                                 <span class="feed-tag">Blog</span>
                                 <span>{{ post.date | date: "%Y" }}</span>
                             </div>
@@ -143,7 +151,7 @@ title: Home
                             <p class="feed-meta">Published: {{ post.date | date: "%B %d, %Y" }}</p>
                             <p class="feed-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
                             <div class="feed-links">
-                                <a href="{{ post.url | relative_url }}" class="btn btn-small">Read More</a>
+                                <a href="{{ post.url | relative_url }}" class="feed-link">Read More</a>
                             </div>
                         </div>
                     </div>
