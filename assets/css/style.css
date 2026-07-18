@@ -617,6 +617,110 @@ nav a.active::after {
     font-size: 0.92rem;
 }
 
+/* Post Pages */
+.post-page {
+    padding: 3.5rem 0 4rem;
+}
+
+.post-page .container {
+    max-width: 780px;
+}
+
+.post-page-header {
+    margin-bottom: 2.5rem;
+}
+
+.post-page-header h1 {
+    font-size: clamp(2rem, 4.5vw, 2.9rem);
+    letter-spacing: -0.02em;
+    margin: 0.85rem 0 0;
+}
+
+.post-content {
+    font-size: 1.03rem;
+    color: var(--secondary-color);
+}
+
+.post-content h2,
+.post-content h3 {
+    color: var(--text-color);
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.post-content h2 {
+    font-size: 1.45rem;
+}
+
+.post-content h3 {
+    font-size: 1.15rem;
+}
+
+.post-content a {
+    color: var(--accent-color);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(20, 125, 99, 0.35);
+}
+
+.post-content a:hover {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.post-content img,
+.post-content video {
+    max-width: 100%;
+    border: 1px solid var(--border-color);
+    margin: 1.5rem 0 0;
+}
+
+.post-content p em:only-child {
+    display: block;
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 0.78rem;
+    color: var(--light-text);
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-content pre {
+    background: var(--code-bg);
+    border-left: 3px solid var(--accent-color);
+    padding: 1rem;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.post-content code {
+    background: var(--code-bg);
+    padding: 0.1rem 0.35rem;
+    font-size: 0.85em;
+}
+
+.post-content pre code {
+    background: none;
+    padding: 0;
+}
+
+.post-content blockquote {
+    border-left: 3px solid var(--border-color);
+    padding-left: 1rem;
+    color: var(--light-text);
+    margin: 1.5rem 0;
+}
+
+.post-content ul,
+.post-content ol {
+    margin: 0 0 1rem 1.4rem;
+}
+
+.post-back {
+    margin-top: 3rem;
+}
+
 /* Footer */
 footer {
     background-color: transparent;

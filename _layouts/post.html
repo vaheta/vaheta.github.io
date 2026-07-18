@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="post-page">
+    <div class="container">
+        <div class="post-page-header">
+            <div class="feed-kicker">
+                <span class="feed-tag">{{ page.kicker | default: "Blog" }}</span>
+                <span>{{ page.date | date: "%B %d, %Y" }}</span>
+                {% if page.tags and page.tags.size > 0 %}
+                <span>{{ page.tags | join: " · " }}</span>
+                {% endif %}
+            </div>
+            <h1>{{ page.title }}</h1>
+        </div>
+        <div class="post-content">
+            {{ content }}
+        </div>
+        <p class="post-back"><a href="{{ '/' | relative_url }}" class="feed-link">Back to home</a></p>
+    </div>
+</article>

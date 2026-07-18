@@ -124,13 +124,16 @@ title: Home
                             <p class="feed-excerpt">{{ project.description }}</p>
                             <div class="feed-links">
                                 {% if project.links.demo %}
-                                <a href="{{ project.links.demo }}" class="feed-link" target="_blank">Demo</a>
+                                <a href="{{ project.links.demo }}" class="feed-link" target="_blank">Link</a>
                                 {% endif %}
                                 {% if project.links.code %}
                                 <a href="{{ project.links.code }}" class="feed-link" target="_blank">Code</a>
                                 {% endif %}
                                 {% if project.links.paper %}
                                 <a href="{{ project.links.paper }}" class="feed-link" target="_blank">Paper</a>
+                                {% endif %}
+                                {% if project.links.writeup %}
+                                <a href="{{ project.links.writeup | relative_url }}" class="feed-link">About</a>
                                 {% endif %}
                             </div>
                         </div>
